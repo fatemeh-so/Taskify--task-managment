@@ -1,43 +1,44 @@
-import { ArrowLeft } from 'phosphor-react';
-import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { ArrowLeft } from 'phosphor-react'
+import { useTranslation } from 'react-i18next'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 function HeaderTitle() {
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+  const { t } = useTranslation()
 
-  // تعیین ترجمه مناسب برای هر مسیر
-  let path;
+  let path
   if (pathname === '/dashboard') {
-    path = t('dashboard');
+    path = t('dashboard')
   }
   if (pathname === '/schedule') {
-    path = t('schedule'); // ترجمه برای 'schedule'
+    path = t('schedule') // ترجمه برای 'schedule'
   }
   if (pathname === '/calender') {
-    path = t('calender'); // ترجمه برای 'calender'
+    path = t('calender') // ترجمه برای 'calender'
   }
   if (pathname === '/timer') {
-    path = t('timer'); // ترجمه برای 'timer'
+    path = t('timer') // ترجمه برای 'timer'
   }
 
-  // شرایط خاص برای پروفایل
   if (pathname === '/profile') {
     return (
-      <p onClick={() => navigate('/')} className='px-4 pt-2'>
-        <ArrowLeft size={20} />
+      <p
+        onClick={() => navigate('/')}
+        className='lg:text-[2rem] flex items-center gap-2 lg:pl-[6rem] pl- pt-2 md:text-[2rem] text-[1rem] font-bold'
+      >
+        <ArrowLeft size={20} /> {t('myProfile')}
       </p>
-    );
+    )
   }
 
   return (
     <>
-      <h1 className='lg:text-[2rem] lg:pl-[7rem] pl- pt-2 md:text-[2rem] text-[1rem] font-bold'>
+      <h1 className='lg:text-[2rem] lg:pl-[6rem] pl- pt-2 md:text-[2rem] text-[1rem] font-bold'>
         {path}
       </h1>
     </>
-  );
+  )
 }
 
-export default HeaderTitle;
+export default HeaderTitle
