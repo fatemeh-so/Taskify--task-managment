@@ -60,10 +60,10 @@ export default function Header() {
   return (
     <Navbar
       maxWidth='full'
-      className='z-0 bg-[#f8f9fa]'
+      className='z-0 bg-transparent bg-[#f8f9fa]'
       height='4rem'
       classNames={{
-        wrapper: 'px-4 lg:px-8 ',
+        wrapper: 'px-4 lg:px-8',
       }}
     >
       <NavbarBrand>

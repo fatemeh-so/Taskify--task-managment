@@ -110,6 +110,7 @@ const resources = {
       enterYourUserName: 'Enter Your User Name',
       chooseFile: 'Choose File',
       saveChanges: 'Save Changes',
+      manageYourProfileAndSettings: 'Manage your profile and settings',
     },
   },
   fa: {
@@ -233,6 +234,7 @@ const resources = {
       saveChanges: 'ذخیره تغییرات',
       Password: 'رمز عبور',
       username: 'نام کاربری',
+      manageYourProfileAndSettings: 'مدیریت پروفایل و تنظیمات',
     },
   },
 }

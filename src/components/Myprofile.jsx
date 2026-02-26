@@ -68,7 +68,10 @@ const MyProfile = () => {
   const isEnglish = i18n.language === 'en'
 
   return (
-    <div className='w-full min-h-screen lg:pl-28 bg-[#f8f9fa] p-4 lg:p-8 flex flex-col items-center'>
+    <div
+      dir={isEnglish ? 'rtl' : 'rtl'}
+      className='w-full min-h-screen lg:pl-28 bg-[#f8f9fa] p-4 lg:p-8 flex flex-col items-center'
+    >
       <div dir={isEnglish ? 'ltr' : 'rtl'} className='w-full max-w-2xl'>
         <Card className='border-none shadow-sm bg-white overflow-visible'>
           <CardBody className='p-0'>
@@ -100,19 +103,19 @@ const MyProfile = () => {
                   />
                 </div>
                 <div className='mt-4 text-center md:text-left'>
-                  <h2 className='text-2xl font-bold text-gray-800'>
-                    {username || t('myProfile')}
+                  <h2
+                    className={`text-2xl font-bold text-gray-800   ${isEnglish ? 'text-left' : 'text-right'} pb-2`}
+                  >
+                    {t('myProfile')}
                   </h2>
-                  <p className='text-gray-500 text-sm'>
-                    {t('welcome_message', {
-                      defaultValue: 'Manage your profile and settings',
-                    })}
+                  <p className='text-gray-500 text-md'>
+                    {t('manageYourProfileAndSettings')}
                   </p>
                 </div>
               </div>
 
               {/* Form Section */}
-              <div className='space-y-8'>
+              <div className='space-y-10'>
                 <Input
                   fullWidth
                   size='lg'
@@ -124,7 +127,7 @@ const MyProfile = () => {
                   variant='flat'
                   startContent={<User size={20} className='text-gray-400' />}
                   classNames={{
-                    label: 'font-semibold text-gray-700 ',
+                    label: `font-semibold text-gray-700 ${isEnglish ? 'text-left' : 'text-right'}`,
                     input: 'text-md',
                     inputWrapper: 'bg-gray-50 hover:bg-gray-100 h-14',
                   }}
@@ -142,7 +145,7 @@ const MyProfile = () => {
                   variant='flat'
                   startContent={<Lock size={20} className='text-gray-400' />}
                   classNames={{
-                    label: 'font-semibold text-gray-700 ',
+                    label: `font-semibold text-gray-700 ${isEnglish ? 'text-left' : 'text-right'}`,
                     input: 'text-md',
                     inputWrapper: 'bg-gray-50 hover:bg-gray-100 h-14 py-4',
                   }}
